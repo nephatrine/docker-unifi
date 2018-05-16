@@ -1,0 +1,20 @@
+#!/usr/bin/with-contenv bash
+
+if [[ ! -d /mnt/config/db ]]; then
+  s6-setuidgid guardian mkdir /mnt/config/db
+fi
+
+if [[ -L /srv/unifi/bin/mongod ]]; then
+  unlink /srv/unifi/bin/mongod
+fi
+s6-setuidgid guardian ln -s /usr/bin/mongod_debug /srv/unifi/bin/mongod
+
+if [[ -L /srv/unifi/data ]]; then
+  unlink /srv/unifi/data
+fi
+s6-setuidgid guardian ln -s /mnt/config/db /srv/unifi/data
+
+if [[ -L /srv/unifi/logs ]]; then
+  unlink /srv/unifi/logs
+fi
+s6-setuidgid guardian ln -s /mnt/config/log /srv/unifi/logs

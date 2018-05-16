@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $* > /tmp/mongod_startup
+exec /usr/bin/mongod ${*//--nohttpinterface/}

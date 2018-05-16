@@ -1,0 +1,4 @@
+/mnt/config/log/server.log {
+	missingok
+	notifempty
+}
