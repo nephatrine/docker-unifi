@@ -1,0 +1,4 @@
+/mnt/config/log/mongod.log {
+	missingok
+	notifempty
+}
