@@ -6,7 +6,8 @@ RUN echo "====== PREPARE BASIC UTILITIES ======" \
  && apk add libc6-compat mongodb openjdk8-jre \
  \
  && echo "====== INSTALL UNIFI ======" \
- && cd /usr/src && wget http://www.ubnt.com/downloads/unifi/5.6.37/UniFi.unix.zip \
+ && cd /usr/src \
+ && wget "http://www.ubnt.com/downloads/unifi/$(wget -q -O- https://community.ubnt.com/ubnt/rss/board?board.id=Blog_UniFi | grep -Eo 'UniFi [0-9\.]+ LTS Stable has' | awk '{print $2}' | head -1)/UniFi.unix.zip" \
  && unzip /usr/src/UniFi.unix.zip -d /srv && mv /srv/UniFi /srv/unifi \
  \
  && echo "====== CLEANUP ======" \
