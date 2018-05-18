@@ -4,11 +4,6 @@ if [[ ! -d /mnt/config/data ]]; then
   s6-setuidgid guardian mkdir /mnt/config/data
 fi
 
-if [[ -L /srv/unifi/bin/mongod ]]; then
-  unlink /srv/unifi/bin/mongod
-fi
-s6-setuidgid guardian ln -s /usr/bin/mongod_wrapper /srv/unifi/bin/mongod
-
 if [[ -L /srv/unifi/data ]]; then
   unlink /srv/unifi/data
 fi
