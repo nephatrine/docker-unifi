@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bash
 
+HOME=/mnt/config/home
+
 if [[ ! -d /mnt/config/data ]]; then
   s6-setuidgid guardian mkdir /mnt/config/data
 fi

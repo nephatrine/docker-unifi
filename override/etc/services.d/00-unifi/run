@@ -1,3 +1,4 @@
 #!/usr/bin/with-contenv sh
+HOME=/mnt/config/home
 cd /srv/unifi
 exec s6-setuidgid guardian java -Xmx1024M -jar /srv/unifi/lib/ace.jar start;
