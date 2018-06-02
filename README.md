@@ -8,9 +8,7 @@ This docker hosts the [UniFi](https://unifi-sdn.ubnt.com/) controller applicatio
 
 ## Settings
 
-- **PUID:** Volume Owner UID
-- **PGID:** Volume Owner GID
-- **TZ:** Time Zone
+See the [base image](https://github.com/nephatrine/docker-base-alpine) for additional settings.
 
 ## Mount Points
 

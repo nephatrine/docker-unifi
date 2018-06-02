@@ -1,9 +1,12 @@
 FROM nephatrine/base-alpine:latest
 LABEL maintainer="Daniel Wolf <nephatrine@gmail.com>"
 
-RUN echo "====== PREPARE BASIC UTILITIES ======" \
+RUN echo "====== RUNTIME CONFIGURATION ======" \
  && apk --update upgrade \
- && apk add libc6-compat mongodb openjdk8-jre \
+ && apk add \
+  libc6-compat \
+  mongodb \
+  openjdk8-jre \
  \
  && echo "====== INSTALL UNIFI ======" \
  && cd /usr/src \
