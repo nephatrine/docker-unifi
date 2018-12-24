@@ -10,7 +10,7 @@ RUN echo "====== RUNTIME CONFIGURATION ======" \
  \
  && echo "====== INSTALL UNIFI ======" \
  && cd /usr/src \
- && wget "http://www.ubnt.com/downloads/unifi/$(wget -q -O- https://community.ubnt.com/ubnt/rss/board?board.id=Blog_UniFi | grep -Eo 'UniFi [0-9\.]+ LTS Stable has' | awk '{print $2}' | head -1)/UniFi.unix.zip" \
+ && wget "http://www.ubnt.com/downloads/unifi/$(wget -q -O- https://community.ubnt.com/ubnt/rss/board?board.id=Blog_UniFi | grep -Eo 'UniFi SDN Controller [0-9\.]+ LTS Stable has' | awk '{print $4}' | head -1)/UniFi.unix.zip" \
  && unzip /usr/src/UniFi.unix.zip -d /srv && mv /srv/UniFi /srv/unifi \
  && unlink /srv/unifi/bin/mongod && ln -s /usr/bin/mongod_wrapper /srv/unifi/bin/mongod \
  \
